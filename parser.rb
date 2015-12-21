@@ -19,13 +19,13 @@ ws.rows.each_with_index do |row, i|
   end
 
   process_domain(@domain_name, i)
-  ip = IPSocket::getaddress(@domain_name)
 
+  ip = IPSocket::getaddress(@domain_name)
     if i > 0
       i += 1
       ws[i, 2] = @query.created_on
       ws[i, 3] = @query.expires_on
-      ws[i, 4] = @query.admin_contact[4]
+      ws[i, 4] = @query.admin_contact[4] # address
       ws[i, 5] = @query.admin_contact[10] # phone
       ws[i, 6] = @query.admin_contact[12] # email
       ws[i, 7] = @query.nameservers[0]
