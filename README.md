@@ -21,8 +21,11 @@ $ cd whois_parser
 
 **Notice**: On first launch google_drive gem creates a session. 
 This will prompt the credential via command line for the first time and save it to config.json file for later usages.
+
 3. Run `ruby parser.rb` in your terminal. Follow the link and copy authorization code, shown in the browser page. 
+
 4. Enter this code in your console.
+
 5. Check your google file
 
 ## Supported environments
