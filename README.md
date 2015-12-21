@@ -10,23 +10,23 @@ $ sudo gem install whois
 $ sudo gem install google_drive
 ```
 ### How to use
-1. Unzip archive and go to proper directory
+- Unzip archive and go to proper directory
 ```
 $ unzip master.zip
 ```
 ```
 $ cd whois_parser
 ```
-2. Fill in a "Website" column in your google spreadsheet
+- Fill in a "Website" column in your google spreadsheet
 
 **Notice**: On first launch google_drive gem creates a session. 
 This will prompt the credential via command line for the first time and save it to config.json file for later usages.
 
-3. Run `ruby parser.rb` in your terminal. Follow the link and copy authorization code, shown in the browser page. 
+- Run `ruby parser.rb` in your terminal. Follow the link and copy authorization code, shown in the browser page. 
 
-4. Enter this code in your console.
+- Enter this code in your console.
 
-5. Check your google file
+- Check your google file
 
 ## Supported environments
 Checked with Ruby 2.0.0 and 2.2.3
