@@ -13,12 +13,7 @@ ws.rows.each_with_index do |row, i|
   @domain_name = row.first
   next unless @domain_name.match(DOMAIN_REGEX)
 
-  def process_domain(domain_name, i)
-    @query = Whois.whois(@domain_name)
-    # p @query.domain, i
-  end
-
-  process_domain(@domain_name, i)
+  @query = Whois.whois(@domain_name)
 
   ip = IPSocket::getaddress(@domain_name)
     if i > 0
