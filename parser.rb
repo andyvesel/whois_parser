@@ -1,8 +1,8 @@
 require 'rubygems'
 require 'whois'
-require "google/api_client"
-require "google_drive"
-require "socket"
+require 'google/api_client'
+require 'google_drive'
+require 'socket'
 
 session = GoogleDrive.saved_session("config.json")
 ws = session.spreadsheet_by_key("1ylT3Wj7WpB2jkwarCvbHoIeM-lQvmBaSN9WjkTp2uw4").worksheets[0]
@@ -17,15 +17,19 @@ ws.rows.each_with_index do |row, i|
   ip = IPSocket::getaddress(domain_name)
   query = Whois.whois(domain_name)
 
-  if i > 0
-    i += 1
-    ws[i, 2] = query.created_on
-    ws[i, 3] = query.expires_on
-    ws[i, 4] = query.admin_contact.to_a[4..9].join(' ') # address
-    ws[i, 5] = query.admin_contact.to_a[10].to_s # phone
-    ws[i, 6] = query.admin_contact[12] # email
-    ws[i, 7] = query.nameservers.join(' ')
-    ws[i, 8] = ip
-    ws.save
+  begin
+    if i > 0
+      i += 1
+      ws[i, 2] = query.created_on
+      ws[i, 3] = query.expires_on
+      ws[i, 4] = query.admin_contact.to_a[4..9].join(' ') # address
+      ws[i, 5] = query.admin_contact.to_a[10].to_s # phone
+      ws[i, 6] = query.admin_contact[12] # email
+      ws[i, 7] = query.nameservers.join(' ')
+      ws[i, 8] = ip
+      ws.save
+    end
+  rescue
+    puts "#{domain_name} unavaliable"
   end
 end
