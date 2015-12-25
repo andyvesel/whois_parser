@@ -1,7 +1,3 @@
-require 'rubygems'
-require 'whois'
-require 'google/api_client'
-require 'google_drive'
 require 'socket'
 
 session = GoogleDrive.saved_session("config.json")
@@ -30,6 +26,6 @@ ws.rows.each_with_index do |row, i|
       ws.save
     end
   rescue
-    puts "#{domain_name} unavaliable"
+    puts "#{domain_name} didn't resolve, please try again"
   end
 end
