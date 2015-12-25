@@ -2,12 +2,9 @@
 Script which parses list of domains from google spreadsheet and gets whois info to each domain
 ### Installation
 1. Download [whois_parser.zip](https://github.com/andyvesel/whois_parser/archive/master.zip)
-2. Install gems
+2. Install gems with Bundler
 ```
-$ sudo gem install whois
-```
-```
-$ sudo gem install google_drive
+$ bundle install
 ```
 ### How to use
 - Unzip archive and go to proper directory
