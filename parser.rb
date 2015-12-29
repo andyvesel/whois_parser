@@ -3,6 +3,8 @@ require "bundler"
 require "socket"
 Bundler.require
 
+puts 'Working, please wait.'
+
 session = GoogleDrive.saved_session("config.json")
 ws = session.spreadsheet_by_key("1ylT3Wj7WpB2jkwarCvbHoIeM-lQvmBaSN9WjkTp2uw4").worksheets[0]
 
