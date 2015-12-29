@@ -72,7 +72,7 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    whois (3.6.4)
+    whois (3.6.5)
       activesupport (>= 3)
 
 PLATFORMS
